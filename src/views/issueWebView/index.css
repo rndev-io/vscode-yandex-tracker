@@ -1,0 +1,55 @@
+.Issue {
+    display: flex;
+}
+
+.Issue > .Main {
+    width: 70%;    
+}
+
+.Issue > .Sidebar {
+    margin-left: 40px;
+}
+
+.Main > .Meta {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+
+.Main > .Description {
+    margin-top: 10px;
+    border-bottom: 1px solid white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.Description div {
+    color: var(--vscode-editor-foreground) !important;
+}
+
+.Meta > .Item {
+    margin-left: 5px;     
+    margin-right: 5px;     
+}
+
+.Comments > .Comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+
+.Author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.Author::first-letter {
+    color: red;
+}
+
+.Sidebar td {
+    padding-bottom: 10px;
+}

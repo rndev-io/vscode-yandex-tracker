@@ -1,0 +1,218 @@
+{
+	"name": "vscode-yandex-tracker",
+	"displayName": "Yandex.Tracker",
+    "description": "VSCode and Yandex.Tracker integration",
+    "publisher": "rusnasonov",
+    "homepage": "https://github.com/rusnasonov/vscode-yandex-tracker",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rusnasonov/vscode-yandex-tracker.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rusnasonov/vscode-yandex-tracker/issues"
+    },
+    "icon": "resources/icons/tracker.png",
+    "author": {
+        "name": "Ruslan Nasonov",
+        "email": "rus.nasonov@gmal.com",
+        "url": "https://rusnasonov.com"
+    },
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"categories": [
+		"Other"
+    ],
+    "keywords": [
+        "yandex",
+        "yandex.tracker",
+        "issues"
+    ],
+	"activationEvents": [
+		"onView:assigned-to-me",
+        "onView:followeb-by-me",
+        "onView:custom",
+        "onCommand:vscode-yandex-tracker.openIssue"
+	],
+	"main": "./media/extension",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "yandex-tracker",
+					"title": "Yandex.Tracker",
+					"icon": "resources/icons/tracker.svg"
+				}
+			]
+		},
+		"views": {
+			"yandex-tracker": [
+				{
+					"id": "assigned-to-me",
+					"name": "Assigned to me"
+				},
+				{
+					"id": "followed-by-me",
+					"name": "Followed by me"
+                },
+                {
+					"id": "custom",
+					"name": "Custom Query"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "vscode-yandex-tracker.setOAuthToken",
+                "title": "Setup OAuth token",
+                "category": "Yandex.Tracker"
+			},
+			{
+				"command": "vscode-yandex-tracker.openIssue",
+                "title": "Open Issue",
+                "category": "Yandex.Tracker"
+            },
+            {
+				"command": "vscode-yandex-tracker.refreshAssignToMeView",
+				"title": "Refresh Assign To Me View",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+                },
+                "category": "Yandex.Tracker"
+            },
+            {
+				"command": "vscode-yandex-tracker.refreshFollowedByMeView",
+				"title": "Refresh Followed By Me View",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+                },
+                "category": "Yandex.Tracker"
+            },
+            {
+				"command": "vscode-yandex-tracker.refreshCustomView",
+				"title": "Refresh Custom View",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+                },
+                "category": "Yandex.Tracker"
+            },
+            {
+				"command": "vscode-yandex-tracker.moreAssignToMeView",
+				"title": "More Issues Assign To Me View",
+				"icon": {
+					"light": "resources/light/more.svg",
+					"dark": "resources/dark/more.svg"
+                },
+                "category": "Yandex.Tracker"
+            },
+            {
+				"command": "vscode-yandex-tracker.moreFollowedByMeView",
+				"title": "More Issues Followed By Me View",
+				"icon": {
+					"light": "resources/light/more.svg",
+					"dark": "resources/dark/more.svg"
+                },
+                "category": "Yandex.Tracker"
+            },
+            {
+				"command": "vscode-yandex-tracker.moreCustomView",
+				"title": "More Issues Custom View",
+				"icon": {
+					"light": "resources/light/more.svg",
+					"dark": "resources/dark/more.svg"
+                },
+                "category": "Yandex.Tracker"
+			}
+        ],
+        "menus": {
+            "view/title": [
+				{
+					"command": "vscode-yandex-tracker.refreshAssignToMeView",
+					"when": "view == assigned-to-me",
+					"group": "navigation"
+                },
+                {
+					"command": "vscode-yandex-tracker.refreshFollowedByMeView",
+					"when": "view == followed-by-me",
+					"group": "navigation"
+                },
+                {
+					"command": "vscode-yandex-tracker.refreshCustomView",
+					"when": "view == custom",
+					"group": "navigation"
+                },
+                {
+					"command": "vscode-yandex-tracker.moreAssignToMeView",
+					"when": "view == assigned-to-me",
+					"group": "navigation"
+                },
+                {
+					"command": "vscode-yandex-tracker.moreFollowedByMeView",
+					"when": "view == followed-by-me",
+					"group": "navigation"
+                },
+                {
+					"command": "vscode-yandex-tracker.moreCustomView",
+					"when": "view == custom",
+					"group": "navigation"
+                }
+            ]
+        },
+        "configuration":[
+            {
+                "title": "Yandex.Tracker configuration",
+                "properties": {
+                    "vscode-yandex-tracker.host": {
+                        "title": "Yandex.Tracker API host",
+                        "description": "Host for Tracker API",
+                        "type": "string",
+                        "default": "https://api.tracker.yandex.net"
+                    },
+                    "vscode-yandex-tracker.query": {
+                        "title": "Query for Custom Panel",
+                        "description": "Query for Custom Panel, see https://yandex.ru/tracker/support/user/query-filter.html",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "vscode-yandex-tracker.organizationId": {
+                        "title": "Organization ID, using in X-Org header",
+                        "description": "Only for Tracker in Yandex.Connect",
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            }
+        ]
+	},
+	"scripts": {
+		"vscode:prepublish": "webpack --env.production",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"compile": "tsc -p ./",
+		"watch": "webpack --watch --env.development",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test",
+		"production": "webpack --env.production",
+		"development": "webpack --env.development"
+	},
+	"devDependencies": {
+		"@types/keytar": "^4.4.0",
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^10.12.21",
+		"ts-loader": "^5.4.3",
+		"tslint": "^5.12.1",
+		"tslint-webpack-plugin": "^2.0.4",
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"webpack": "^4.30.0",
+		"webpack-cli": "^3.3.1",
+		"css-loader": "^2.1.1",
+		"style-loader": "^0.23.1"
+	},
+	"dependencies": {
+		"axios": "^0.18.0",
+		"preact": "^8.4.2"
+	}
+}

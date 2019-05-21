@@ -1,0 +1,35 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "extensionHost",
+			"request": "launch",
+			"name": "Launch Extension",
+			"runtimeExecutable": "${execPath}",
+			"args": [
+				"--extensionDevelopmentPath=${workspaceFolder}",
+				"--disable-extension=GitHub.vscode-pull-request-github-insiders"
+			],
+			"skipFiles": ["<node_internals>/**/*.js", "**/node_modules/**/*.js"],
+			"smartStep": true,
+			"sourceMaps": true,
+			"outFiles": [
+				"${workspaceFolder}/media/*.js"
+			]
+		},
+		{
+			"name": "Extension Tests",
+			"type": "extensionHost",
+			"request": "launch",
+			"runtimeExecutable": "${execPath}",
+			"args": [
+				"${workspaceFolder}/out/test",
+				"--extensionDevelopmentPath=${workspaceFolder}",
+				"--extensionTestsPath=${workspaceFolder}/out/test"
+			],
+			"outFiles": [
+				"${workspaceFolder}/out/test/**/*.js"
+			]
+		}
+	]
+}

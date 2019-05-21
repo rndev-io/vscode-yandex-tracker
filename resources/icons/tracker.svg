@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22pt" height="22pt" viewBox="0 0 28 28" version="1.1" 
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="surface">
+        <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <rect id="rect-1" fill="#ffffff" x="2" y="0" width="8" height="8"></rect>
+            <rect id="rect-2" fill="#ffffff" x="10" y="0" width="8" height="8"></rect>
+            <rect id="rect-3" fill="#ffffff" x="18" y="0" width="8" height="8"></rect>
+            <rect id="rect-4" fill="#ffffff" x="10" y="8" width="8" height="8"></rect>
+            <rect id="rect-5" fill="#ffffff" x="10" y="16" width="8" height="8"></rect>
+        </g>
+    </g>
+</svg>
+
