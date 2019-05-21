@@ -22,7 +22,7 @@ Token stored in system Keychain.
 
 You can view you issues on sidebar. 
 
-![Sidebar](https://github.com/rusnasonov/vscode-yandex-wiki/blob/master/resources/screenshots/sidebar.png)
+![Sidebar](https://github.com/rusnasonov/vscode-yandex-tracker/blob/master/resources/screenshots/sidebar.png)
 
 You can explore issues with three filters — `Assign To Me`, `Followed By Me`, `Custom Query`.
 
