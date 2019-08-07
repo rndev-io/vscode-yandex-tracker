@@ -212,7 +212,7 @@
 		"style-loader": "^0.23.1"
 	},
 	"dependencies": {
-		"axios": "^0.18.0",
+		"axios": "^0.18.1",
 		"preact": "^8.4.2"
 	}
 }
