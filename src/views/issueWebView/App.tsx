@@ -1,5 +1,4 @@
 import { h, Component } from 'preact';
-
 import { RawIssue, RawComment } from '../../api';
 
 export interface State {
@@ -69,7 +68,7 @@ class App extends Component<any, State> {
                         {state.comments.map((cmt) => {
                             return (
                                 <div className='Comment'>
-                                    <div class='Author'>{issue.createdBy ? issue.createdBy.display : ''}</div>
+                                    <div class='Author'>{cmt.createdBy ? cmt.createdBy.display : ''}</div>
                                     <div dangerouslySetInnerHTML={{__html: cmt.text}}/>
                                 </div>
                             );
